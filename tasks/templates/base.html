@@ -8,35 +8,35 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container">
+        <div class="container-fluid">
           <a class="navbar-brand" href="/">Time Tracking</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
+            <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a href="/" class="nav-link">Home</a>
+                    <a class="nav-link active" aria-current="page" href="/" >Home</a>
                 </li>
                 {% if user.is_authenticated %}
                 <li class="nav-item">
-                    <a href="/tasks" class="nav-link">Tareas</a>
+                    <a class="nav-link" href="/tasks" >Tareas</a>
                 </li>
                 <!--<li class="nav-item">
                     <a href="/tasks_completed/" class="nav-link">Tareas Completadas</a>
                 </li> -->
                 <li class="nav-item">
-                    <a href="/tasks/create/" class="nav-link">Crear Tareas</a>
+                    <a class="nav-link" href="/tasks/create/" >Crear Tareas</a>
                 </li>
                 <li class="nav-item">
-                    <a href="/logout" class="nav-link">logout</a>
-                    <li class="nav-item">
+                    <a class="nav-link" href="/logout" >logout</a>
+                </li>
                 {% else %}
                 <li class="nav-item">
-                    <a href="/signin" class="nav-link">Signin</a>
+                    <a class="nav-link" href="/signin" >Signin</a>
                 </li>
                 <li class="nav-item">
-                    <a href="/signup" class="nav-link">Signup</a>
+                    <a class="nav-link" href="/signup" >Signup</a>
                 </li>
                 {% endif %}
             </ul>
