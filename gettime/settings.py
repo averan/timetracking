@@ -88,7 +88,7 @@ DATABASES = {
 
     #}
     'default': dj_database_url.config(
-        default='postgresql://postgres:postgres:postgres@localhost/postgres',
+        default='postgresql://postgres:postgres@localhost/postgres',
         conn_max_age=600
     )
 }
@@ -129,6 +129,18 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
+
+#if not DEBUG:
+#    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+#    STATICFILES_STORAGE = 'whitenoise.storage.Compressed'
+if not DEBUG:
+    # Tell Django to copy statics to the `staticfiles` directory
+    # in your application directory on Render.
+    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+    # Turn on WhiteNoise storage backend that takes care of compressing static files
+    # and creating unique names for each version so they can safely be cached forever.
+    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 LOGIN_URL = 'signin'
 
