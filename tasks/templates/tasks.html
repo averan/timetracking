@@ -15,8 +15,7 @@
                         {% endif %}
                         <p>Usuario: {{task.user.username}}</p>
                     </header>
-                    <!--<p>Fechas Creación: {{task.fechacompletada|date:'Y M d - G:i'}} --- Horas Totales: {{task.horastotales}}</p>-->
-                    <p>Fechas Creación: {{task.fechacompletada|date:'Y M d}} --- Horas Totales: {{task.horastotales}}</p>
+                    <p>Fechas Creación: {{task.fechacompletada|date:'Y M d - G:i'}} --- Horas Totales: {{task.horastotales}}</p>
                     <p>{{task.descripcion}}</p>
                 </a>
               {% endfor %}
