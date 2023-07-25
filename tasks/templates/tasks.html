@@ -9,13 +9,14 @@
               <a class="list-group-item" href="{% url 'task_detail' task.id %}">
                     <header class="d-flex justify-content-between">
                         {% if task.important %}
-                        <h3 class="fw-bold text-success">{{task.titulo}}</h3>
+                        <h4 class="fw-bold text-success">{{task.titulo}}</h4>
                         {% else %} 
-                        <h3 class="fw-bold">{{task.titulo}}</h3>
+                        <h4 class="fw-bold">{{task.titulo}}</h4>
                         {% endif %}
-                        <p>{{task.user.username}}</p>
+                        <p class="fw-bold">Usuario: {{task.user.username}}</p>
                     </header>
-                    <p>{{task.fechacompletada|date:'Y M d - G:i'}} Horas Totales: {{task.horastotales}}</p>
+                    <!--<p>Fechas Creación: {{task.fechacompletada|date:'Y M d - G:i'}} --- Horas Totales: {{task.horastotales}}</p>-->
+                    <p>Fechas Creación: {{task.fechacompletada|date:'Y M d}} --- Horas Totales: {{task.horastotales}}</p>
                     <p>{{task.descripcion}}</p>
                 </a>
               {% endfor %}
